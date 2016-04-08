@@ -2,6 +2,10 @@
 
 import sys, os, configparser, requests, json, re, random
 
+# TODO: Don't format integer rolls as floats
+# TODO: silly messages for natural 20s and 1s
+# TODO: some sort of glorious dice rolling sound effects
+
 '''
 Push20: a Python3 interface with Pushbullet that allows people to roll dice and push the result to themselves and/or someone else.
 
