@@ -1,4 +1,10 @@
 # Yay, a proper gitignore so things won't clutter the repo!
+# Magic Scraper Stuff
 MTGArticles/*
 MTGArticles
+
+# push20 stuff
+.push20
+
+*.pyc
 
