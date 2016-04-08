@@ -10,15 +10,14 @@ Some fun little python scripts I've written to do various things. Started with i
 + ####**push20.py**
 
   CLI-based script that uses Pushbullet's API https://docs.pushbullet.com/ to create and send
-  pushes of dice rolls in a simplified dice notation.
+  pushes of dice rolls in a simplified dice notation to either yourself, or a specified email.
   ```
-  
   Usage:
     push20.py [email] [dice]
 
-    Arguments:
-      email:	standard email@something.com format
-      dice:		standard [N]dX+K, where N is number of dice, X is number of faces of the dice
+  Arguments:
+    email:	standard email@something.com format
+    dice:		standard [N]dX+K, where N is number of dice, X is number of faces of the dice
   		+ is the operator (+, -, *|x, /) accepted, K is the factor to operate on 
   
   ```
