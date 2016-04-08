@@ -2,7 +2,6 @@
 
 import sys, os, configparser, requests, json, re, random
 
-# TODO: Don't format integer rolls as floats
 # TODO: silly messages for natural 20s and 1s
 # TODO: some sort of glorious dice rolling sound effects
 
@@ -168,10 +167,19 @@ if not email:
 	email = response['email']
 	
 # Set up the push creation
+
+if (float(roll)).is_integer():
+	title = "Push20: " + diceString + ": %d"%roll
+	body = diceBreakdown + ' = %d'%roll
+else:
+	title = "Push20: " + diceString + ": %.2f"%roll
+	body = diceBreakdown + ' = %.2f'%roll
+
+	
 url = 'https://api.pushbullet.com/v2/pushes'
 data = {'type': 	'note',
-		'title': 	"Push20: " + diceString + ": %.2f"%roll,
-		'body': 	diceBreakdown + ' = %.2f'%roll,
+		'title': 	title,
+		'body': 	body,
 		'email':	email
 	   }
 	   
