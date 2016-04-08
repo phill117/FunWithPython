@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests, bs4, urllib.parse, os, re
 
 # TODO make target directory an optional argument

@@ -1,0 +1,4 @@
+# Yay, a proper gitignore so things won't clutter the repo!
+MTGArticles/*
+MTGArticles
+
