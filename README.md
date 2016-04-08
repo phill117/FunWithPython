@@ -1,5 +1,5 @@
 # FunWithPython
-Some fun little python scripts We've written to do various things. Started with inspiration from https://automatetheboringstuff.com/
+Some fun little python scripts we've written to do various things. Started with inspiration from https://automatetheboringstuff.com/
 
 ###*The scripts so far...*
 
