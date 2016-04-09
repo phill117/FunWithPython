@@ -8,6 +8,25 @@ Some fun little python scripts we've written to do various things. Started with 
 
   Web scraper that iterates through all of the current Magic the Gathering fiction published by Wizards, sends the webpages to http://fivefilters.org/pdf-newspaper/ to be formatted into a pretty and reader friendly pdf, and then saves them onto your hard drive with appropriate titles and directory organization.
 
++ ####**yobomb.py**
+  *Author: Sean*
+
+  Ever want to piss off your friends, family, co-workers, strangers whose yo username you just so happen to have?
+  yobomb.py is the answer. Yo bomb sends a designated amount of yos to some poor schmuck periodically after a designated interval of 
+  time has passed. 
+  An API key is required and must be inserted into the code (I think it should be obvious where)
+  One can get said API key at https://dev.justyo.co/
+  ```
+  Usage:
+    yobomb.py [target] [iterations] [interval]
+
+  Arguments:
+    target:	your "friend's" yo usernam (no caps required)
+    iterations (optional):		the total number of yo's to send (default: 100)
+    interval (optional):		interval in seconds between the sending of each yo (default: 1)
+  
+  ```
+  
 + ####**push20.py**
   *Author: Chris*
 
