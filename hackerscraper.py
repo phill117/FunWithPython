@@ -18,6 +18,14 @@ Argument(s):
 
 '''
 
+if len(sys.argv) < 2:
+	numcomments = 3
+else:
+	try:
+		numcomments = int(sys.argv[1])
+	except:
+		numcomments = 3
+
 url = "https://hacker-news.firebaseio.com/v0/"
 
 request = requests.get(url + "topstories.json")
@@ -31,7 +39,7 @@ topstory = request.json()
 
 print(topstory['title'] + "\n")
 
-for i in range(0,4):
+for i in range(0,numcomments):
 	request = requests.get(url + "item/" + str((topstory['kids'])[i]) + ".json")
 	comment = request.json()
 	print(comment['text'] + "\n")
