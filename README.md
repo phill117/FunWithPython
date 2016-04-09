@@ -11,19 +11,23 @@ Some fun little python scripts we've written to do various things. Started with 
 + ####**yobomb.py**
   *Author: Sean*
 
-  Ever want to piss off your friends, family, co-workers, strangers whose yo username you just so happen to have?
-  yobomb.py is the answer. Yo bomb sends a designated amount of yos to some poor schmuck periodically after a designated interval of 
+  Ever want to piss off your friends, family, co-workers, 
+strangers whose Yo username you just so happen to have?
+  yobomb.py is the answer. Yo bomb sends a designated amount of 
+Yos to some poor schmuck periodically after a designated interval of 
   time has passed. 
   An API key is required and must be inserted into the code (I think it should be obvious where)
   One can get said API key at https://dev.justyo.co/
   ```
   Usage:
-    yobomb.py [target] [iterations] [interval]
+    yobomb.py target [iterations] [interval]
 
   Arguments:
-    target:	your "friend's" yo usernam (no caps required)
-    iterations (optional):		the total number of yo's to send (default: 100)
-    interval (optional):		interval in seconds between the sending of each yo (default: 1)
+    target:	your "friend's" Yo username (no caps required)
+    iterations (optional):		the total number of Yos 
+to send (default: 100)
+    interval (optional):		interval in seconds 
+between the sending of each Yo (default: 1)
   
   ```
   
