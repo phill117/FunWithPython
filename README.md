@@ -24,10 +24,8 @@ Yos to some poor schmuck periodically after a designated interval of
 
   Arguments:
     target:	your "friend's" Yo username (no caps required)
-    iterations (optional):		the total number of Yos 
-to send (default: 100)
-    interval (optional):		interval in seconds 
-between the sending of each Yo (default: 1)
+    iterations (optional):		the total number of Yos to send (default: 100)
+    interval (optional):		interval in seconds between the sending of each Yo (default: 1)
   
   ```
   
