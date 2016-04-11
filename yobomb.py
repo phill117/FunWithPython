@@ -45,4 +45,5 @@ while (i < len(sys.argv)):
 
 yo(target)
 for x in range(1, times):
+	time.sleep(interval)
 	yo(target)
