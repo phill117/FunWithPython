@@ -5,8 +5,10 @@ import sys, os, requests, requests_cache, json, re, random
 requests_cache.install_cache('wikiGraph_cache')
 # TODO: try catches
 # TODO: article case sensitivity
-# TODO: fix that pesky 2/3 tuple bug
 # TODO: ignore files
+# TODO: make the graphs look better than a firework
+# TODO: make parser actually traverse redirects
+# TODO: make each node in order 1 be a unique color, then order 2 to be that same color with less saturation; if they're connected to multiple nodes of order 1, then color them an average color?
 
 '''
 wikiGraph
@@ -36,7 +38,11 @@ def getWikiConnections(articleName):
 	
 	request = requests.get(wikiURL + articleName)
 	article = request.json()
-	articleText = article['query']['pages'][list(article['query']['pages'].keys())[0]]['revisions'][0]['*']
+	try:
+		articleText = article['query']['pages'][list(article['query']['pages'].keys())[0]]['revisions'][0]['*']
+	except KeyError as e:
+		print(e)
+		return []
 	
 	#someKindofRegex = '\\[\\[([()A-z0-9 .,\'"]+)[\|]?([()A-z0-9 .,"\']+)?\\]\\]'
 	someKindofRegex = '\\[\\[([()A-z0-9 .,\'\"]*?)(?:\|([()A-z0-9 .,\'\"]*?))?\\]\\]'
@@ -93,15 +99,19 @@ if __name__ == '__main__':
 	color_map = {0:'#FF0000', 1:'#FF6600', 2:'#FFFF00', 3:'#CCCCCC'} 
 	#node_sizes = [v * 250 for v in d.values()]
 	#nodelist, node_sizes = zip(*node_sizes.items())
-	
-	nx.draw(graph, 
+	pos = nx.spring_layout(graph)
+	nx.draw(graph,pos,node_size=1200,node_shape='o',node_color='0.75', edgelist = [])
+	nx.draw_networkx_nodes(graph, 
 			cmap=plt.get_cmap('jet'), 
 			node_color=[color_map[graph.node[node]['order']] for node in graph], 
 			node_size=4000, 
-			with_labels=True,
-			edge_color='#CCCCCC')
+			#with_labels=True,
+			pos=pos)
+	nx.draw_networkx_edges(graph,alpha=0.3,pos=pos)
+	nx.draw_networkx_labels(graph,pos=pos)
 	
 	#nx.draw_networkx_labels(graph, pos=nx.spring_layout(graph), labels=node_labels)
 	#plt.show()
+	print
 	plt.savefig("wikiGraphs/" + articleName + ".png")
 	
