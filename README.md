@@ -45,3 +45,36 @@ Yos to some poor schmuck periodically after a designated interval of
   		+ is the operator (+, -, *|x, /) accepted, K is the factor to operate on 
   
   ```
+  
++ ####**hackerscraper.py**
+  *Author: Chris*
+  
+  Basic script that prints the title of the top article and a specified number of top-level comments
+  from HackerNews to the screen. Uses HackerNews' firebase API. Not very impressive; a full-fledged
+  CLI browser was found a couple of days after I started this.
+  ```
+  Usage:
+  hackerscraper.py [numcomments]
+
+  Argument(s):
+
+    numcomments: number of top comments to load.
+
+  ```
+  
++ ####**wikiGraph.py**
+  *Author: Chris*
+  
+  Visualizer for Wikipedia article connections. Uses MediaWiki's api to retrieve the markdown for a
+  specified article, then parses all the links in the first section of that article, and those articles'
+  first section links. Then, uses networkx to draw the graph. Used as a jumping-off point for a future
+  offline mobile Wikipedia browser.
+  ```
+  Usage:
+  wikiGraph.py articleName
+  
+  Argument:
+	
+	articleName: name of article to query. use quotation marks for articles with spaces.
+
+  ```

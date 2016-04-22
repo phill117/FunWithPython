@@ -9,6 +9,7 @@ MTGArticles
 # wikiGraph stuff
 wikiGraphs/*
 wikiGraphs
+wikiGraph_cache.sqlite
 
 *.pyc
 *.stackdump
