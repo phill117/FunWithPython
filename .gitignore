@@ -6,5 +6,9 @@ MTGArticles
 # push20 stuff
 .push20
 
-*.pyc
+# wikiGraph stuff
+wikiGraphs/*
+wikiGraphs
 
+*.pyc
+*.stackdump

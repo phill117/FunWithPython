@@ -23,7 +23,7 @@ Note: It's been a while since I've done any Python. Sorry in advance.
 # Both are optional, if there is no destination, it'll send to yourself by default
 # if there's not dice to roll it'll roll a single d20 by default
 
-# Dice regular expression
+# Dice regular expression (probably works)
 DiceRegex = '^([0-9]*)d([0-9]+)([\+\-\*\/x]?)([0-9]*)$'
 
 # default, no arguments
@@ -33,6 +33,7 @@ email = ''
 # 2 arguments: check what kind of argument it is
 match = None
 if len(sys.argv) == 2:
+	# this is a horrible way to determine valid email addresses
 	if '@' in sys.argv[1]:
 		email = sys.argv[1]
 	else:
