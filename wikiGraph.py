@@ -134,6 +134,7 @@ if __name__ == '__main__':
 			cmap=plt.get_cmap('jet'), 
 			node_color=[color_map[graph.node[node]['order']] for node in graph], 
 			node_size=4000, 
+			node_alpha=0.5,
 			#with_labels=True,
 			pos=pos)
 	nx.draw_networkx_edges(graph,alpha=0.3,pos=pos)
