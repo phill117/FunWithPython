@@ -1,0 +1,47 @@
+README
+
+Program seqcover.py is a python script that performs the sequential covering algorithm based 
+on the FOIL algorithm provided by Mitchell (1997). All 3rd party dependecies are listed below and can be installed
+using pip. Due to a lack of write permissions, I was unable to install liac-arff on the UNSW lab machines, 
+and therefore was unable to test the script on that system.
+
+The .arff files used were excluded from submission due to the 200kb size limit.
+To download them, visit the course webpage under the 'Sequential Cover' details in the assignment 2 spec.
+
+** Dependencies **
+
+	> Garunteed to work on Python 3.4 
+
+	> use 'pip install x', where x is the dependency, to download... 
+	-- argparse
+	-- liac-arff
+	-- matplotlib
+
+
+** Arguments **
+
+	Required Arguments
+	-a / --attribute 'ATTR' : the target attribute to learn
+	-v / --value 'VALUE' : the 'positive' value of the target attribute
+	-f / --file 'FILENAME.ARFF' : the .arff file that contains the data
+
+	Optional Arguments
+	-e / --exclude ['E1', 'E2', ...]: fields to be excluded from rules
+	-k / --validate INT : run a k-cross validation instead and use k partitions
+	-p / --prune : split the data into a 2:1 training:validation ratio partitions
+			after training, attempt to prune individual rules based on the validation set. 
+
+
+	Example Usage...
+	python seqcover.py -a 'class' -f 'mushroom.arff' -v 'p'
+	or (excludes the 'Instance-name' attribute)
+	python seqcover.py -a 'Class' -f 'splice2class.arff' -v 'N' -e 'Instance_name'
+	or (for k-cross validation)
+	python seqcover.py -a 'class' -f 'mushroom.arff' -v 'e' -k 10
+	or (for pruning, and excludes the 'Instance-name' and 'attribute_13' attributes)
+	python seqcover.py -a 'Class' -f 'splice2class.arff' -v 'N' -e 'Instance_name' 'attribute_13' -p
+
+
+** NOTES **
+	- The commands and the arguments are CASE-SENSITIVE
+	- The order of arguments do not matter
